@@ -18,7 +18,7 @@ namespace esphome::ld2450
             if (unit_of_measurement_ != nullptr)
             {
                 if (strcmp(unit_of_measurement_, "m") == 0)
-                    conversion_factor_ = 1f;
+                    conversion_factor_ = 1.0f;
                 else if ((strcmp(unit_of_measurement_, "cm") == 0))
                     conversion_factor_ = 0.1f;
             }
