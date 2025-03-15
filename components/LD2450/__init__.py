@@ -31,8 +31,8 @@ from esphome.const import (
     STATE_CLASS_MEASUREMENT,
     UNIT_CENTIMETER,
     UNIT_DEGREES,
-    UNIT_METER
-    UNIT KILOMETER,
+    UNIT_METER,
+    UNIT_KILOMETER,
 )
 
 MULTI_CONF = True
