@@ -94,7 +94,8 @@ namespace esphome::ld2450
         if (!is_applying_changes_ || (is_applying_changes_ && millis() - apply_change_lockout_ > POST_RESTART_LOCKOUT_DELAY))
         {
             is_applying_changes_ = false;
-
+            ESP_LOGW(TAG, "applying changes");
+            
             // Process command queue
             if (command_queue_.size() > 0)
             {
@@ -191,10 +192,11 @@ namespace esphome::ld2450
                     peek_status_ = message_type;
             }
 
-            if (peek_status_ == 1 && available() >= 23)
+            if (peek_status_ == 1 && available() >= 13)
             {
-                uint8_t msg[23] = {0x00};
-                read_array(msg, 23);
+                ESP_LOGW(TAG, "Message read");
+                uint8_t msg[13] = {0x00};
+                read_array(msg, 13);
                 peek_status_ = 0;
 
                 // Skip invalid messages
@@ -206,6 +208,7 @@ namespace esphome::ld2450
             }
             if (peek_status_ == 2 && (available() >= 2 || configuration_message_length_ > 0))
             {
+                ESP_LOGW(TAG, "CMD processing");
                 if (configuration_message_length_ == 0)
                 {
                     // Read message content length
