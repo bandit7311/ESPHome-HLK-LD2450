@@ -202,6 +202,11 @@ namespace esphome::ld2450
                 // Skip invalid messages
                 if (msg[9] != 0xF8 || msg[10] != 0xF7 || msg[11] != 0xF6 || msg[12] != 0xF5)
                     return;
+  
+                if (millis() - last_speedmeasurement_ < DELAY_MEASUREMENT)
+                    return;
+                
+                last_speedmeasurement_ = millis();                    
                 ESP_LOGW(TAG, "Process message");
                 process_message(msg, 9);
                 processed_message = true;
