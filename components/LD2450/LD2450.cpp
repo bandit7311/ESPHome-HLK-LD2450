@@ -202,7 +202,7 @@ namespace esphome::ld2450
                 // Skip invalid messages
                 if (msg[10] != 0xF8 || msg[11] != 0xF7 || msg[12] != 0xF6 || msg[13] != 0xF5)
                     return;
-
+                ESP_LOGW(TAG, "Process message");
                 process_message(msg, 9);
                 processed_message = true;
             }
