@@ -323,20 +323,21 @@ namespace esphome::ld2450
             
             // temp update
             targets_[i]->update_values(x, y, speed, distance_resolution);
-           
-            if ((y <= max_detection_distance_ || (targets_[i]->is_present() && y <= max_detection_distance_ + max_distance_margin_)) &&
-                (angle <= max_detection_tilt_angle_ || (targets_[i]->is_present() && angle <= max_detection_tilt_angle_ + tilt_angle_margin_)) &&
-                (angle >= min_detection_tilt_angle_ || (targets_[i]->is_present() && angle >= min_detection_tilt_angle_ - tilt_angle_margin_)))
-            {
-                targets_[i]->update_values(x, y, speed, distance_resolution);
-            }
-            else if (y > max_detection_distance_ + max_distance_margin_ ||
-                     angle > max_detection_tilt_angle_ + tilt_angle_margin_ ||
-                     angle < min_detection_tilt_angle_ - tilt_angle_margin_)
-            {
-                targets_[i]->clear();
-            }
-        }
+
+            
+            //if ((y <= max_detection_distance_ || (targets_[i]->is_present() && y <= max_detection_distance_ + max_distance_margin_)) &&
+                //(angle <= max_detection_tilt_angle_ || (targets_[i]->is_present() && angle <= max_detection_tilt_angle_ + tilt_angle_margin_)) &&
+                //(angle >= min_detection_tilt_angle_ || (targets_[i]->is_present() && angle >= min_detection_tilt_angle_ - tilt_angle_margin_)))
+            //{
+                //targets_[i]->update_values(x, y, speed, distance_resolution);
+            //}
+            //else if (y > max_detection_distance_ + max_distance_margin_ ||
+                     //angle > max_detection_tilt_angle_ + tilt_angle_margin_ ||
+                     //angle < min_detection_tilt_angle_ - tilt_angle_margin_)
+            //{
+                //targets_[i]->clear();
+            //}
+        //}
 
         int target_count = 0;
         for (Target *target : targets_)
