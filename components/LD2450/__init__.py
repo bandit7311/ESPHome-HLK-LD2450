@@ -113,7 +113,7 @@ DISTANCE_SENSOR_SCHEMA = (
 
 SPEED_SENSOR_SCHEMA = (
     sensor.sensor_schema(
-        unit_of_measurement=UNIT_METER_PER_SECOND,
+        unit_of_measurement=UNIT_KILOMETER_PER_SECOND,
         accuracy_decimals=0,
         state_class=STATE_CLASS_MEASUREMENT,
         device_class=DEVICE_CLASS_SPEED,
@@ -123,9 +123,9 @@ SPEED_SENSOR_SCHEMA = (
         {
             cv.GenerateID(): cv.declare_id(PollingSensor),
             cv.Optional(
-                CONF_UNIT_OF_MEASUREMENT, default=UNIT_METER_PER_SECOND
+                CONF_UNIT_OF_MEASUREMENT, default=UNIT_KILOMETER_PER_SECOND
             ): cv.All(
-                cv.one_of(UNIT_METER_PER_SECOND),
+                cv.one_of(UNIT_KILOMETER_PER_SECOND),
             ),
         }
     )
