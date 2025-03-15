@@ -74,6 +74,7 @@ CONF_TRACKING_MODE_SWITCH = "tracking_mode_switch"
 CONF_BLUETOOTH_SWITCH = "bluetooth_switch"
 CONF_BAUD_RATE_SELECT = "baud_rate_select"
 UNIT_METER_PER_SECOND = "m/s"
+UNIT_KILOMETER_PER_HOUR = "km/h"
 ICON_ANGLE_ACUTE = "mdi:angle-acute"
 ICON_ACCOUNT_GROUP = "mdi:account-group"
 
@@ -114,7 +115,7 @@ DISTANCE_SENSOR_SCHEMA = (
 
 SPEED_SENSOR_SCHEMA = (
     sensor.sensor_schema(
-        unit_of_measurement=UNIT_KILOMETER_PER_SECOND,
+        unit_of_measurement=UNIT_KILOMETER_PER_HOUR,
         accuracy_decimals=0,
         state_class=STATE_CLASS_MEASUREMENT,
         device_class=DEVICE_CLASS_SPEED,
@@ -124,9 +125,9 @@ SPEED_SENSOR_SCHEMA = (
         {
             cv.GenerateID(): cv.declare_id(PollingSensor),
             cv.Optional(
-                CONF_UNIT_OF_MEASUREMENT, default=UNIT_KILOMETER_PER_SECOND
+                CONF_UNIT_OF_MEASUREMENT, default=UNIT_KILOMETER_PER_HOUR
             ): cv.All(
-                cv.one_of(UNIT_KILOMETER_PER_SECOND),
+                cv.one_of(UNIT_KILOMETER_PER_HOUR),
             ),
         }
     )
