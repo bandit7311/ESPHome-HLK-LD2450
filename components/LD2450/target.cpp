@@ -58,11 +58,13 @@ namespace esphome::ld2450
         if (angle_sensor_ != nullptr)
         {
             //float angle = atan2(y, x) * (180 / M_PI) - 90;
+            float angle = 0.0;
             angle_sensor_->set_value(present ? -angle : NAN);
         }
         if (distance_sensor_ != nullptr)
         {
            // float distance = sqrt(x_ * x_ + y_ * y_);
+            float distance = 0.0;
             distance_sensor_->set_value(present ? distance : NAN);
         }
     }
