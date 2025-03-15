@@ -303,8 +303,8 @@ namespace esphome::ld2450
         last_message_received_ = millis();
         configuration_mode_ = false;
 
-          // 2 data packages for now, 19!
-        for (int i = 0; i < 2; i++)
+          // 1 data package for now, 13!
+        for (int i = 0; i < 1; i++)
         {
             int offset = 8 * i;
 
