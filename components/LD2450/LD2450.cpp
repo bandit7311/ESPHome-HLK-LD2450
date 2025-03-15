@@ -323,6 +323,7 @@ namespace esphome::ld2450
             
             // temp update
             targets_[i]->update_values(x, y, speed, distance_resolution);
+            ESP_LOGE(TAG, "update");
 
             
             //if ((y <= max_detection_distance_ || (targets_[i]->is_present() && y <= max_detection_distance_ + max_distance_margin_)) &&
