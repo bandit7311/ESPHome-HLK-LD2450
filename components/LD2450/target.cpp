@@ -39,10 +39,9 @@ namespace esphome::ld2450
     void Target::update_values(int16_t speed, int16_t resolution)
     {
         if (fast_off_detection_ && resolution_ != 0 &&
-            (x != x_ || y != y_ || speed != speed_ || resolution != resolution_))
+            (speed != speed_ || resolution != resolution_))
             last_change_ = millis();
-        x_ = x;
-        y_ = y;
+
         speed_ = speed;
         resolution_ = resolution;
 
