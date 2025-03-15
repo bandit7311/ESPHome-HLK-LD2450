@@ -389,6 +389,9 @@ namespace esphome::ld2450
         /// @brief timestamp of lockout period after applying changes requiring a restart
         uint32_t apply_change_lockout_ = 0;
 
+        /// delay of measurements
+        uint32_t last_speedmeasurement_ = 0;
+
         /// @brief nr of available bytes during the last iteration
         int last_available_size_ = 0;
 
