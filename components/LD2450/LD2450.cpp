@@ -94,12 +94,12 @@ namespace esphome::ld2450
         if (!is_applying_changes_ || (is_applying_changes_ && millis() - apply_change_lockout_ > POST_RESTART_LOCKOUT_DELAY))
         {
             is_applying_changes_ = false;
-            ESP_LOGW(TAG, "applying changes");
+            //ESP_LOGW(TAG, "applying changes");
             
             // Process command queue
             if (command_queue_.size() > 0)
             {
-                ESP_LOGW(TAG, "Loop cmd");
+                //ESP_LOGW(TAG, "Loop cmd");
                 // Inject enter config mode command if not in mode
                 if (!configuration_mode_ && command_queue_.front()[0] != COMMAND_ENTER_CONFIG)
                 {
