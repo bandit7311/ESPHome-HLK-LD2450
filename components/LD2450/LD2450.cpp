@@ -198,7 +198,7 @@ namespace esphome::ld2450
                 peek_status_ = 0;
 
                 // Skip invalid messages
-                if (msg[20] != 0xF8 || msg[21] != 0xF7 || msg[22] != 0xF6 || msg[23] != 0xF5)
+                if (msg[10] != 0xF8 || msg[11] != 0xF7 || msg[12] != 0xF6 || msg[13] != 0xF5)
                     return;
 
                 process_message(msg, 19);
