@@ -203,7 +203,7 @@ namespace esphome::ld2450
                 if (msg[10] != 0xF8 || msg[11] != 0xF7 || msg[12] != 0xF6 || msg[13] != 0xF5)
                     return;
 
-                process_message(msg, 19);
+                process_message(msg, 9);
                 processed_message = true;
             }
             if (peek_status_ == 2 && (available() >= 2 || configuration_message_length_ > 0))
@@ -343,7 +343,7 @@ namespace esphome::ld2450
                 //targets_[i]->clear();
             //}
         }
-
+        ESP_LOGW(TAG, "Message processed");
         int target_count = 0;
         for (Target *target : targets_)
         {
