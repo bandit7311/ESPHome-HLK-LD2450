@@ -271,7 +271,7 @@ namespace esphome::ld2450
         // Attempt to leave config mode periodically if the sensor is not sending updates
         if (!is_applying_changes_ && !sensor_available_ && millis() - last_config_leave_attempt_ > CONFIG_RECOVERY_INTERVAL)
         {
-            ESP_LOGD(TAG, "Sensor is not sending updates, attempting to leave config mode.");
+            ESP_LOGD(TAG, "Sensor is not sending updates, !attempting! to leave config mode.");
             last_config_leave_attempt_ = millis();
             command_send_retries_ = 0;
             configuration_mode_ = true;
