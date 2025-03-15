@@ -320,10 +320,10 @@ namespace esphome::ld2450
             int distance_resolution = msg[offset + 6];
 
             // Flip x axis if required
-            x = x * (flip_x_axis_ ? -1 : 1);
+            //x = x * (flip_x_axis_ ? -1 : 1);
 
             // Filter targets further than max detection distance and max angle
-            float angle = -(atan2(y, x) * (180 / M_PI) - 90);
+            //float angle = -(atan2(y, x) * (180 / M_PI) - 90);
             
             // temp update
             targets_[i]->update_values(x, y, speed, distance_resolution);
