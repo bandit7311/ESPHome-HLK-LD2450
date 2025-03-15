@@ -304,15 +304,15 @@ namespace esphome::ld2450
         {
             int offset = 8 * i;
 
-            int16_t x = msg[offset + 1] << 8 | msg[offset + 0];
-            if (msg[offset + 1] & 0x80)
-                x = -x + 0x8000;
-            int16_t y = (msg[offset + 3] << 8 | msg[offset + 2]);
-            if (y != 0)
-                y -= 0x8000;
-            int speed = msg[offset + 5] << 8 | msg[offset + 4];
-            if (msg[offset + 5] & 0x80)
-                speed = -speed + 0x8000;
+            //int16_t x = msg[offset + 1] << 8 | msg[offset + 0];
+            //if (msg[offset + 1] & 0x80)
+                //x = -x + 0x8000;
+            //int16_t y = (msg[offset + 3] << 8 | msg[offset + 2]);
+            //if (y != 0)
+                //y -= 0x8000;
+            int speed = msg[offset + 7];
+            //if (msg[offset + 5] & 0x80)
+                //speed = -speed + 0x8000;
             int distance_resolution = msg[offset + 7] << 8 | msg[offset + 6];
 
             // Flip x axis if required
