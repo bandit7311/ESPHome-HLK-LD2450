@@ -98,6 +98,7 @@ namespace esphome::ld2450
             // Process command queue
             if (command_queue_.size() > 0)
             {
+                ESP_LOGW(TAG, "Loop cmd");
                 // Inject enter config mode command if not in mode
                 if (!configuration_mode_ && command_queue_.front()[0] != COMMAND_ENTER_CONFIG)
                 {
