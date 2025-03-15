@@ -314,10 +314,10 @@ namespace esphome::ld2450
             //int16_t y = (msg[offset + 3] << 8 | msg[offset + 2]);
             //if (y != 0)
                 //y -= 0x8000;
-            int speed = msg[offset + 8];
+            int speed = msg[offset + 7];
             //if (msg[offset + 5] & 0x80)
                 //speed = -speed + 0x8000;
-            int distance_resolution = msg[offset + 6];
+            int distance_resolution = msg[offset + 5];
 
             // Flip x axis if required
             //x = x * (flip_x_axis_ ? -1 : 1);
