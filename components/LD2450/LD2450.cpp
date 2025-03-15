@@ -342,7 +342,7 @@ namespace esphome::ld2450
             //{
                 //targets_[i]->clear();
             //}
-        //}
+        }
 
         int target_count = 0;
         for (Target *target : targets_)
