@@ -86,7 +86,7 @@ namespace esphome::ld2450
         log_bluetooth_mac();
     }
 
-    const uint8_t update_header[4] = {0xAA, 0xFF, 0x03, 0x00};
+    const uint8_t update_header[4] = {0xF4, 0xF3, 0xF2, 0xF1};
     const uint8_t config_header[4] = {0xFD, 0xFC, 0xFB, 0xFA};
     void LD2450::loop()
     {
