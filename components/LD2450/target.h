@@ -135,7 +135,7 @@ namespace esphome::ld2450
          */
         void clear()
         {
-            update_values(0, 0, 0, 0);
+            update_values(0, 0);
         }
 
         /**
