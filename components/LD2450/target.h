@@ -104,7 +104,7 @@ namespace esphome::ld2450
          * @param speed The speed of the target
          * @param resolution The distance resolution of the measurement
          */
-        void update_values(int16_t x, int16_t y, int16_t speed, int16_t resolution);
+        void update_values(int16_t speed, int16_t resolution);
 
         /**
          * @brief Determines whether this target is currently detected.
