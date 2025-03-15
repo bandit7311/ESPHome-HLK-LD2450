@@ -190,17 +190,17 @@ namespace esphome::ld2450
                     peek_status_ = message_type;
             }
 
-            if (peek_status_ == 1 && available() >= 26)
+            if (peek_status_ == 1 && available() >= 23)
             {
-                uint8_t msg[26] = {0x00};
-                read_array(msg, 26);
+                uint8_t msg[23] = {0x00};
+                read_array(msg, 23);
                 peek_status_ = 0;
 
                 // Skip invalid messages
-                if (msg[24] != 0x55 || msg[25] != 0xCC)
+                if (msg[20] != 0xF8 || msg[21] != 0xF7 || msg[22] != 0xF6 || msg[23] != 0xF5)
                     return;
 
-                process_message(msg, 24);
+                process_message(msg, 19);
                 processed_message = true;
             }
             if (peek_status_ == 2 && (available() >= 2 || configuration_message_length_ > 0))
