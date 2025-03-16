@@ -98,7 +98,7 @@ UpdatePolygonAction = ld2450_ns.class_("UpdatePolygonAction", automation.Action)
 DISTANCE_SENSOR_SCHEMA = (
     sensor.sensor_schema(
         unit_of_measurement=UNIT_METER,
-        accuracy_decimals=5,
+        accuracy_decimals=0,
         state_class=STATE_CLASS_MEASUREMENT,
         device_class=DEVICE_CLASS_DISTANCE,
     )
