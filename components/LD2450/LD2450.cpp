@@ -323,7 +323,8 @@ namespace esphome::ld2450
             //if (msg[offset + 5] & 0x80)
                 //speed = -speed + 0x8000;
             int distance_resolution = msg[offset + 5];
-
+            int distance = msg[offset + 5];
+            
             // Flip x axis if required
             //x = x * (flip_x_axis_ ? -1 : 1);
 
