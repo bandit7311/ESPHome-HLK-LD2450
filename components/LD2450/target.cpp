@@ -64,7 +64,7 @@ namespace esphome::ld2450
         if (distance_sensor_ != nullptr)
         {
            // float distance = sqrt(x_ * x_ + y_ * y_);
-            float distance = 0.0;
+            //float distance = 0.0;
             distance_sensor_->set_value(present ? distance : NAN);
         }
     }
