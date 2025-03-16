@@ -196,6 +196,9 @@ namespace esphome::ld2450
         /// @brief distance resolution of the target
         int16_t resolution_ = 0;
 
+        /// @brief distance of the target
+        int16_t distance_ = 0;
+
         /// @brief  Name of this target
         const char *name_ = nullptr;
 
