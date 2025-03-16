@@ -332,7 +332,7 @@ namespace esphome::ld2450
             //float angle = -(atan2(y, x) * (180 / M_PI) - 90);
             
             // temp update
-            targets_[i]->update_values(speed, distance_resolution);
+            targets_[i]->update_values(speed, distance_resolution, distance);
             ESP_LOGE(TAG, "update");
 
             
