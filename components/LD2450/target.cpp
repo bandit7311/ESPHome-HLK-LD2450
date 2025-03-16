@@ -45,8 +45,7 @@ namespace esphome::ld2450
         speed_ = speed;
         resolution_ = resolution;
         distance_ = distance;
-        
-        float distance
+      
         bool present = is_present();
         // Update sub sensors
         if (x_position_sensor_ != nullptr)
