@@ -36,7 +36,7 @@ namespace esphome::ld2450
         }
     }
 
-    void Target::update_values(int16_t speed, int16_t resolution)
+    void Target::update_values(int16_t speed, int16_t resolution, int16_t distance)
     {
         if (fast_off_detection_ && resolution_ != 0 &&
             (speed != speed_ || resolution != resolution_))
@@ -44,7 +44,9 @@ namespace esphome::ld2450
 
         speed_ = speed;
         resolution_ = resolution;
-
+        distance_ = distance;
+        
+        float distance
         bool present = is_present();
         // Update sub sensors
         if (x_position_sensor_ != nullptr)
